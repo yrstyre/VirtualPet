@@ -1,0 +1,23 @@
+{
+  "name": "virtualPet",
+  "version": "0.0.0",
+  "authors": [
+    "Emy Spjuth <emy.spjuth@tretton37.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "scripts/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "knockout": "~3.3.0",
+    "requirejs": "~2.1.16",
+    "underscore": "~1.8.2",
+    "bootstrap": "~3.3.4"
+  }
+}
