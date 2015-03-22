@@ -1,0 +1,212 @@
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans|Amatic+SC);
+
+$font-stack: 'Josefin Sans', sans-serif;
+$font-stack-titles: 'Amatic SC', cursive;
+
+#body-wrapper {
+	background-color: #DDF2F8;
+}
+
+.game-wrapper {
+	padding: 40px 0;
+	text-align: center;
+	h1, .restart-btn {
+		font-family: $font-stack-titles;
+	}
+	button, p, h2, label {
+		font-family: $font-stack;
+	}
+	label, p {
+		font-weight: 100;
+		font-size: 20px;
+	}
+	h1 {
+		font-weight: 900;
+		font-size: 66px;
+	}
+	h2 {
+		font-size: 27px;
+	}
+	button {
+		font-weight: 900;
+		font-size: 16px;
+	}
+}
+
+.hidden {
+	display: none;
+}
+
+.progress-label {
+	text-align: left;
+}
+
+
+/*
+==============================================
+buttons
+==============================================
+*/
+
+.restart-btn {
+	cursor: pointer;
+	font-size: 40px;
+	font-weight: 900;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 20px 45px;
+	color: rgba(0, 0, 0, 0.2);
+	&:hover {
+		color: rgba(0, 0, 0, 0.5);
+	}
+}
+
+.start-game-btn {
+	padding-top: 20px;	
+}
+
+/*
+==============================================
+images
+==============================================
+*/
+.egg-picture {
+	  padding: 45px 0;
+}
+
+.image-container {
+	padding: 45px 0;
+}
+
+.image {
+	height:auto;
+	width:auto;
+	max-width:300px;
+	max-height:300px;
+}
+
+.bunny {
+	content: url(../img/bunny.gif);
+}
+
+.cat {
+	content: url(../img/cat.jpg);
+}
+
+.hamster {
+	content: url(../img/hamster.png);
+}
+
+.love, .feed, .play {
+	position: absolute;
+	right: 230px;
+}
+
+.love{
+	content: url(../img/hearts.gif);
+}
+
+.feed{
+	content: url(../img/fruits.gif);
+}
+
+.play{
+	content: url(../img/play.gif);
+}
+
+/*
+==============================================
+fade-in
+==============================================
+*/
+
+.fade-in{
+	animation-name: fade-in;
+	-webkit-animation-name: fade-in;	
+
+	animation-duration: 1.5s;	
+	-webkit-animation-duration: 1.5s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;		
+
+	visibility: visible !important;	
+}
+
+@keyframes fade-in {
+	0% {
+		transform: scale(0);
+		opacity: 0.0;		
+	}
+	60% {
+		transform: scale(1.1);	
+	}
+	80% {
+		transform: scale(0.9);
+		opacity: 1;	
+	}	
+	100% {
+		transform: scale(1);
+		opacity: 1;	
+	}		
+}
+
+@-webkit-keyframes fade-in {
+	0% {
+		-webkit-transform: scale(0);
+		opacity: 0.0;		
+	}
+	60% {
+		-webkit-transform: scale(1.1);
+	}
+	80% {
+		-webkit-transform: scale(0.9);
+		opacity: 1;	
+	}	
+	100% {
+		-webkit-transform: scale(1);
+		opacity: 1;	
+	}		
+}
+
+/*
+==============================================
+floating
+==============================================
+*/
+
+.floating{
+	animation-name: floating;
+	-webkit-animation-name: floating;
+
+	animation-duration: 1.5s;	
+	-webkit-animation-duration: 1.5s;
+
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@keyframes floating {
+	0% {
+		transform: translateY(0%);	
+	}
+	50% {
+		transform: translateY(8%);	
+	}	
+	100% {
+		transform: translateY(0%);
+	}			
+}
+
+@-webkit-keyframes floating {
+	0% {
+		-webkit-transform: translateY(0%);	
+	}
+	50% {
+		-webkit-transform: translateY(8%);	
+	}	
+	100% {
+		-webkit-transform: translateY(0%);
+	}			
+}

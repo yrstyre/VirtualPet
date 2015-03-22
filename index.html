@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="scripts/libs/bootstrap/dist/css/bootstrap.css">
+	<meta charset="UTF-8">
+	<title>Virtual Pet!</title>
+</head>
+<body id="body-wrapper">
+
+	<div class="container">
+		<div class="game-wrapper">
+			<div class="" data-bind="visible: !gameIsOn() && !pet()">
+				<h1 class="main-title">VIRTUAL PET</h1>
+
+				<div class="row egg-picture">
+					<img src="img/egg.gif" class="fade-in">
+				</div>
+				<div class="row name-input">
+					<div class="col-md-4 col-md-offset-4">
+						<label>give your pet a name</label>
+						<input class="form-control" placeholder="" data-bind="value: petName" />
+					</div>
+				</div>
+				<div class="start-game-btn">
+					<button class="btn btn-info game-btns" data-bind="click: createNewPet">Hatch egg</button>
+				</div>
+			</div>
+
+			<div class="hidden" data-bind="css: { hidden: !gameIsOn() }">
+				<div data-bind="with: pet">
+					<h1 class="pet-description">IT'S A... <span data-bind="text: animal.toUpperCase()"></span>!!!</h1>
+					<h2>Hello <span data-bind="text: $parent.petName"></span> :)</h2>
+
+					<div class="row image-container">
+						<span class="floating image" data-bind="css: animal"></span>
+						<span class="image action fade-in" data-bind="visible: $parent.isInAction"></span>
+					</div>
+				</div>
+				
+				<div class="row">
+					<p class="progress-label">Life line</p>
+					<div class="progress">
+						<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" data-bind="style: { width: currentLife() + '%'}">
+						<!-- <span class="sr-only">60% Complete</span> -->
+						</div>
+					</div>
+				</div>
+
+				<div class="row" data-bind="foreach: actions">
+					<button class="btn btn-info game-btns" data-bind="text: $data, click: $root.setAction.bind($parent)"></button>
+				</div>
+				
+			</div>
+
+			<div class="hidden" data-bind="css: { hidden: gameIsOn() || !pet() }">
+				<h1 class="game-over-msg">oh no! game over :c</h1>
+				<p>Better luck next time..</p>
+			</div>
+			<div class="hidden" data-bind="css: { hidden: !pet() }">
+				<span class="restart-btn" data-bind="click: reloadPage">RESTART</span>
+			</div>
+		</div>
+
+    </div>
+	
+	<script data-main="scripts/main" src="scripts/libs/requirejs/require.js"></script>
+</body>
+</html>

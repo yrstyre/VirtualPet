@@ -1,0 +1,9 @@
+Refactor the button functions to all use one function and render image through one span.
+
+DONE! //stuff that shouldn't be visible is flashing on page load.
+
+DONE! //Make 'hatch egg' button nicer.
+
+DONE! //Make css look nicer.
+
+put up project on github.
